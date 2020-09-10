@@ -46,4 +46,7 @@ public class GeneratorBody implements PrimeNumberGenerator {
         primes.add(x);
     }
 
+    public List<Integer> getPrimes() {
+        return primes;
+    }
 }

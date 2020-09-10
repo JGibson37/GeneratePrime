@@ -3,8 +3,7 @@ import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class GeneratorBodyTest {
     @Before
@@ -44,5 +43,14 @@ public class GeneratorBodyTest {
         List<Integer> result;
         result = primeTest.generate(7920, 7900);
         assertTrue(result.contains(7901));
+    }
+    @Test
+    public void shouldReturnPrimeList(){
+        GeneratorBody primeTest = new GeneratorBody();
+        List<Integer> stored;
+        stored = primeTest.generate(7900, 7920);
+        List<Integer> result;
+        result = primeTest.getPrimes();
+        assertSame(stored, result);
     }
 }
