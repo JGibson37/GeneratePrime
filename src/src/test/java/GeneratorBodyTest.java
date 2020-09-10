@@ -26,4 +26,11 @@ public class GeneratorBodyTest {
         result = primeTest.generate(7900, 7920);
         assertTrue(result.contains(7901));
     }
+    @Test
+    public void checkRangeForNonPrime(){
+        GeneratorBody primeTest = new GeneratorBody();
+        List<Integer> result;
+        result = primeTest.generate(7900, 7920);
+        assertFalse(result.contains(7910));
+    }
 }
