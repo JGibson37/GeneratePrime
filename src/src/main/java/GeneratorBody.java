@@ -14,8 +14,8 @@ public class GeneratorBody implements PrimeNumberGenerator {
 
     @Override
     public boolean isPrime(int value) {
-        for (int i = 2; i <= value/2; i++){
-            if (value % i == 0){
+        for (int i = 2; i <= value / 2; i++) {
+            if (value % i == 0) {
                 return false;
             }
         }
@@ -23,10 +23,10 @@ public class GeneratorBody implements PrimeNumberGenerator {
     }
 
     public void ifInverseRangeGiven(int startingValue, int endingValue) {
-        if(startingValue > endingValue){
-            for (int x = startingValue; x >= endingValue; x--){
+        if (startingValue > endingValue) {
+            for (int x = startingValue; x >= endingValue; x--) {
                 boolean result = isPrime(x);
-                if(result==true){
+                if (result == true) {
                     savePrime(x);
                 }
             }
@@ -34,9 +34,9 @@ public class GeneratorBody implements PrimeNumberGenerator {
     }
 
     public void ifPositiveRangeGiven(int startingValue, int endingValue) {
-        for (int x = startingValue; x <= endingValue; x++){
+        for (int x = startingValue; x <= endingValue; x++) {
             boolean result = isPrime(x);
-            if(result==true){
+            if (result == true) {
                 savePrime(x);
             }
         }
