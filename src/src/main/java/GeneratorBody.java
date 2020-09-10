@@ -7,6 +7,14 @@ public class GeneratorBody implements PrimeNumberGenerator {
 
     @Override
     public List<Integer> generate(int startingValue, int endingValue) {
+        if(startingValue > endingValue){
+            for (int x = startingValue; x >= endingValue; x--){
+                boolean result = isPrime(x);
+                if(result==true){
+                    savePrime(x);
+                }
+            }
+        }
         for (int x = startingValue; x <= endingValue; x++){
             boolean result = isPrime(x);
             if(result==true){

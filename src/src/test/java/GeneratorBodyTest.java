@@ -33,4 +33,11 @@ public class GeneratorBodyTest {
         result = primeTest.generate(7900, 7920);
         assertFalse(result.contains(7910));
     }
+    @Test
+    public void findPrimesInverseRange(){
+        GeneratorBody primeTest = new GeneratorBody();
+        List<Integer> result;
+        result = primeTest.generate(7920, 7900);
+        assertTrue(result.contains(7901));
+    }
 }
