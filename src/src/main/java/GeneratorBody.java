@@ -7,25 +7,9 @@ public class GeneratorBody implements PrimeNumberGenerator {
 
     @Override
     public List<Integer> generate(int startingValue, int endingValue) {
-        if(startingValue > endingValue){
-            for (int x = startingValue; x >= endingValue; x--){
-                boolean result = isPrime(x);
-                if(result==true){
-                    savePrime(x);
-                }
-            }
-        }
-        for (int x = startingValue; x <= endingValue; x++){
-            boolean result = isPrime(x);
-            if(result==true){
-                savePrime(x);
-            }
-        }
+        ifInverseRangeGiven(startingValue, endingValue);
+        ifPositiveRangeGiven(startingValue, endingValue);
         return primes;
-    }
-
-    private void savePrime(int x) {
-        primes.add(x);
     }
 
     @Override
@@ -37,4 +21,29 @@ public class GeneratorBody implements PrimeNumberGenerator {
         }
         return true;
     }
+
+    public void ifInverseRangeGiven(int startingValue, int endingValue) {
+        if(startingValue > endingValue){
+            for (int x = startingValue; x >= endingValue; x--){
+                boolean result = isPrime(x);
+                if(result==true){
+                    savePrime(x);
+                }
+            }
+        }
+    }
+
+    public void ifPositiveRangeGiven(int startingValue, int endingValue) {
+        for (int x = startingValue; x <= endingValue; x++){
+            boolean result = isPrime(x);
+            if(result==true){
+                savePrime(x);
+            }
+        }
+    }
+
+    private void savePrime(int x) {
+        primes.add(x);
+    }
+
 }

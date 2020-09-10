@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
@@ -6,7 +7,11 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class GeneratorBodyTest {
-
+    @Before
+    public void arrayTestStartUp(){
+        GeneratorBody primeTest = new GeneratorBody();
+        List<Integer> result;
+    }
     @Test
     public void checkPrimeNumber7901(){
         GeneratorBody primeTest = new GeneratorBody();
